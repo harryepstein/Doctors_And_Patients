@@ -1,11 +1,12 @@
 "use strict";
 app.controller('EveningDiaryCtrl', function ($scope, SleepDataFactory) {
 
+$scope.Button = "Save";
 
 $scope.sleepData = {
   TOD: "evening"
-}
-$scope.sleepData.date = new Date()
+};
+$scope.sleepData.date = new Date();
 
  $scope.postSleepData = function (sleepData) {
 
@@ -14,7 +15,7 @@ $scope.sleepData.date = new Date()
   SleepDataFactory.postSleepData(sleepData);
 
    /* body... */
- }
+ };
 
 
-})
+});

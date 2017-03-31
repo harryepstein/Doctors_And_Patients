@@ -1,22 +1,27 @@
 "use strict";
 app.controller('MorningDiaryCtrl', function ($scope, SleepDataFactory, $location) {
 
+$scope.Button = "Save";
+
+
 $scope.sleepData = {
   TOD: "morning"
-}
+};
 
-$scope.sleepData.date = new Date()
+$scope.sleepData.date = new Date();
 
  $scope.postSleepData = function (sleepData) {
 
-  SleepDataFactory.postSleepData(sleepData);
-  $location.path("/landingPage");
-
- }
+  SleepDataFactory.postSleepData(sleepData) .then ((sleepData) =>{
 
 
+  $location.url("/getData");
+  });
+};
 
-})
+
+
+});
 // let printDoctors = function () {
 //   HospitalFactory.getDoctors()
 //   .then((doctorData) => {

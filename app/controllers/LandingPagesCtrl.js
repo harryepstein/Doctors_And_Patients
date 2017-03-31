@@ -1,6 +1,22 @@
-app.controller('LandingPagesCtrl', function($scope) {
+"use strict";
+app.controller('LandingPagesCtrl', function($scope, AuthFactory, $window) {
   console.log("You are in the Landing Pages Controller");
-  /*********************************************************
-  SOMETHING NEEDS TO HAPPEN HERE
-  **********************************************************/
-})
+
+
+
+
+  let logout = () => {
+    console.log("logout clicked");
+    AuthFactory.logoutUser()
+    .then(function(data){
+      console.log("logged out?", data);
+
+
+
+      $window.location.url = "#/login";
+    }, function(error){
+      console.log("error occured on logout");
+    });
+  };
+
+});

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("loginCtrl", function($scope, $rootScope, $location, firebaseURL, AuthFactory){
+app.controller("loginCtrl", function($scope, $rootScope, $location, firebaseURL, AuthFactory, Firebase){
   let ref = new Firebase(firebaseURL);
 
   // $scope.hasUser = false;
@@ -23,9 +23,9 @@ app.controller("loginCtrl", function($scope, $rootScope, $location, firebaseURL,
       password: $scope.account.password
     }, (error, userData) => {
       if(error){
-        console.log(`Error creating user: ${error}`)
+        console.log(`Error creating user: ${error}`);
       } else{
-        console.log(`Created user account with uid: ${userData.uid}`)
+        console.log(`Created user account with uid: ${userData.uid}`);
         $scope.login();
       }
     });
@@ -41,7 +41,8 @@ app.controller("loginCtrl", function($scope, $rootScope, $location, firebaseURL,
         $rootScope.isActive = true;
         $location.path("/");
         $scope.$apply();
-      })
+        $scope.isLoggedIn = true;
+      });
 
 
 
@@ -53,4 +54,4 @@ app.controller("loginCtrl", function($scope, $rootScope, $location, firebaseURL,
 
   };
 
-})
+});

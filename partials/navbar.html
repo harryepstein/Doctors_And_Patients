@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" ng-controller="UserCtrl">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<!-- add responsive drop down menu -->
+      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> Menu
+	        	<span class="sr-only">Toggle navigation</span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+      		</button>
+
+      	</div> <!-- end of navbar-header -->
+
+    <!-- add a search bar to the nav area -->
+	<div class="col-xs-6 searchBox" ng-show="isLoggedIn">
+	 <!--  <div class="input-group">
+
+	    <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText.search">
+	    <span class="input-group-btn">
+	      <button class="btn btn-default"><i aria-hidden="true"></i>go</button>
+	    </span>
+	  </div> -->
+    <!-- end searchbox -->
+	</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+		        <!-- only show based on user login -->
+		        <!-- add links as needed -->
+		        <!-- <li ng-show="isLoggedIn"><a ng-href="#/items/new">New Item</a></li>
+		        <li ng-show="isLoggedIn"><a ng-href="#/items/list">All Items</a></li> -->
+
+		        <li ng-show="!isLoggedIn" class="active">
+            <a ng-href="#!/login">Login</a>
+            </li>
+
+		        <li ng-show="isLoggedIn">
+              <a ng-href="#!/logout">Logout</a>
+              </li>
+
+		    </ul>
+	    </div>
+
+    </div> <!-- end of container-fluid -->
+</nav>

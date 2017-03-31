@@ -1,0 +1,67 @@
+{
+    "doctors": [
+        {
+            "drruth": {
+                "first_name": "ruth",
+                "last_name": "ginsberg",
+                "speciality": "obgyn"
+            }
+        },
+        {
+        "drphil": {
+            "first_name": "phil",
+            "last_name": "doctor",
+            "speciality": "pseudoscience"
+            }
+        },
+        {
+            "drrey": {
+                "first_name": "robert",
+                "last_name": "rey",
+                "speciality": "plastic surgery"
+            }
+        }
+    ],
+    "patients": [
+        {
+            "lelo": {
+                "first_name": "lindsey",
+                "last_name": "lohan",
+                "ailment": "general addict",
+                "doctor_id": "drphil"
+            }
+        },
+        {
+            "beyonce": {
+                "first_name": "beyonce",
+                "last_name": "knowles",
+                "ailment": "multi pregos",
+                "doctor_id": "drruth"
+            }
+        },
+        {
+            "cate": {
+                "first_name": "caitlyn",
+                "last_name": "jenner",
+                "ailment": "body dysmorphia",
+                "doctor_id": "drrey"
+            }
+        },
+        {
+            "peterson": {
+                "first_name": "kristen",
+                "last_name": "bluebird",
+                "ailment": "everything",
+                "doctor_id": "drphil"
+            }
+        },
+        {
+            "jefferson": {
+                "first_name": "thomas",
+                "last_name": "jefferson",
+                "ailment": "old",
+                "doctor_id": "drrey"
+            }
+        }
+    ]
+}

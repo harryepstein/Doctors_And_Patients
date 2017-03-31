@@ -14,17 +14,18 @@
 <link rel="icon" type="image/png" href="~/Users/harryepstein/Downloads/favicon.ico">
 
 </head>
+
 <body ng-app="SleepDataTracker" ng-controller="EveningDiaryCtrl">
 <h1 class="jumbotron text-center text-capitalize">Sleep Diary Tracker</h1>
 
+  <div ng-include="'partials/navbar.html'">
+
+  </div>
 
 <div ng-view>
 
+
 </div>
-
-
-
-
 
 
 <!-- SCRIPTS -->
@@ -33,6 +34,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 
+
+<div ng-view>
 
 <!-- app specific files -->
   <script type="/lib/node_modules/jquery/dist/jquery.min.js"></script>
@@ -53,6 +56,7 @@
   <script src="app/controllers/LandingPagesCtrl.js"></script>
   <script src="app/controllers/editEveningCtrl.js"></script>
   <script src="app/controllers/editMorningCtrl.js"></script>
+    <script type="text/javascript" src="app/controllers/UserCtrl.js"></script>
 
 
 

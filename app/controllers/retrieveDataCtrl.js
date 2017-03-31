@@ -1,22 +1,33 @@
-
+"use strict";
 app.controller('retrieveDataCtrl',  function( SleepDataFactory, $scope){
 
 console.log( 'inside retrieveDataCtrl ');
 
-$scope.sleepData;
-let getSleepData = function (){
+getSleepData();
+
+
+// $scope.sleepData;
+function getSleepData(){
+  $scope.sleepData = [];
 
   SleepDataFactory.getSleepData()
-  //it returns a promise
-.then((sleepData) => {
-  console.log(sleepData);
+    .then((SleepDataList) => {
+    var itemCollection = SleepDataList.data;
+
+          Object.keys(itemCollection).forEach(function(key){
+            itemCollection[key].id=key;
+            $scope.sleepData.push(itemCollection[key]);
+            // sleepObjects.push(itemCollection[key]);
+
+            // console.log("$scope.sleepData", $scope.sleepData);
 
 
-    $scope.sleepData = sleepData;
-})
+          });
+
+});
 }
 
-getSleepData();
+
 
 
 
@@ -27,11 +38,11 @@ getSleepData();
   SleepDataFactory.getSleepData()
   //it returns a promise
       .then((sleepData) => {
-       console.log(sleepData);
-    $scope.sleepData = sleepData;
-      })
-    })
+       console.log("This is after delete sleepData:", sleepData);
+    $scope.sleepData = sleepData.data;
+      });
+    });
   };
   /* body... */
 
-})
+});
